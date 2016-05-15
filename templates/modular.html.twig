@@ -1,0 +1,16 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+    {{ page.content }}
+    {% for module in page.collection() %}
+        {{ module.content }}
+    {% endfor %}
+{% endblock %}
+
+{% block bottom %}
+    {% do assets.add('http://code.jquery.com/jquery-1.11.0.min.js', 101) %}
+    {% do assets.add('http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js', 100) %}
+    {% do assets.add('theme://js/showup.js', 99) %}
+    {% do assets.add('theme://js/functions.js', 98) %}  
+    {{ assets.js()}}
+{% endblock %}

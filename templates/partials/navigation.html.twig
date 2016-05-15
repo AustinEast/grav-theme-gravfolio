@@ -1,0 +1,15 @@
+<nav class="">
+    <ul id="links"> 
+        {% for page in pages.children.visible %}
+            {% if page.visible %}
+                {% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
+                <li class="{{ current_page }}">
+                    <a href="{{ page.url }}">
+                            {{ page.menu }}
+                    </a>
+                 </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    {% include 'partials/social.html.twig' %}
+</nav>

@@ -1,0 +1,8 @@
+<section id="blog">
+        <h2>{{ page.title}}</h2>
+        {{ page.content }}
+        {% for page in page.find('/blog').children.order('date', 'desc').slice(0, 1) %}
+        {% include 'partials/blog-item.html.twig' %}
+        {% endfor %}
+        <a href="blog" class="btn">View More Posts</a>
+    </section>

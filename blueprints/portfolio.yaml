@@ -1,0 +1,30 @@
+title: Portfolio
+'@extends': default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+            fields:
+                header.showFilter:
+                  type: toggle
+                  label: Portfolio Filter
+                  highlight: 1
+                  default: 1
+                  options:
+                    1: Enable
+                    0: Disable
+                  validate:
+                    type: bool
+                header.headerToggle:
+                  type: toggle
+                  label: Hero Header
+                  highlight: 1
+                  default: 1
+                  options:
+                    1: Enable
+                    0: Disable
+                  validate:
+                    type: bool
+                    

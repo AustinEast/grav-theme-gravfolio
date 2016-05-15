@@ -1,0 +1,58 @@
+{% extends 'partials/base.html.twig' %}
+
+{% set collection = page.collection() %}
+  {% set base_url = page.url %}
+  {% set feed_url = base_url %}
+
+  {% if base_url == '/' %}
+    {% set base_url = '' %}
+  {% endif %}
+
+  {% if base_url == base_url_relative %}
+    {% set feed_url = base_url~'/'~page.slug %}
+  {% endif  %}
+
+  {% block content %}
+    {% if config.plugins.breadcrumbs.enabled %}
+      {% include 'partials/breadcrumbs.html.twig' %}
+    {% endif %}
+    {% if page.header.headerToggle %}
+    <header>
+	   <div>
+           {{ page.content }}
+        </div>
+    </header>
+    <section id="works" style="margin-top:0;">
+    {% else %}
+    <section id="works" style="margin-top:0;">
+        <h2>{{ page.title }}</h2>
+        {{ page.content }}
+    {% endif %}
+        {% if page.header.showFilter %}
+        <ul>
+            <li data-filter="all">All</li>
+            {% for class in page.header.classes %}
+            <li data-filter=".{{ class }}">{{ class }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <div class="portfolio">
+            {% for child in collection %}
+        {% include 'partials/portfolio-item.html.twig' with {'page':child, 'truncate':true} %}
+    {% endfor %}
+
+    {% if config.plugins.pagination.enabled and collection.params.pagination %}
+      {% include 'partials/pagination.html.twig' with {'pagination':collection.params.pagination} %}
+    {% endif %}
+        </div>
+    </section>
+  {% endblock %}
+
+
+{% block bottom %}
+    {% do assets.add('http://code.jquery.com/jquery-1.11.0.min.js', 101) %}
+    {% do assets.add('http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js', 100) %}
+    {% do assets.add('theme://js/showup.js', 99) %}
+    {% do assets.add('theme://js/functions.js', 98) %} 
+    {{ assets.js()}}
+{% endblock %}

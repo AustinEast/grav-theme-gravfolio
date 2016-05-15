@@ -1,0 +1,19 @@
+title: Blog
+'@extends': default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+            fields:
+                header.headerToggle:
+                  type: toggle
+                  label: Hero Header
+                  highlight: 1
+                  default: 1
+                  options:
+                    1: Enable
+                    0: Disable
+                  validate:
+                    type: bool

@@ -1,0 +1,12 @@
+<article class="{% for tag in page.taxonomy.tag %}{{ tag }} {% endfor %}">
+    <h3>{{ page.title }}</h3>
+    <hr>
+    <a href="{{ page.link }}">
+        <div>
+            <img src="{{ page.media[page.header.featured].cropZoom(500,375).url() }}">
+            <aside>
+                <p>{{ page.header.description }}</p>
+            </aside>
+        </div>
+    </a>
+</article>

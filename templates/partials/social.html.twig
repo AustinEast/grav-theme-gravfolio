@@ -1,0 +1,40 @@
+{% if site.socialIcons %}
+<p>
+    {% if header.author.email %}
+    <a href="mailto:{{ header.author.email }}">
+        <i class="icon ion-email"></i>
+    </a>
+    {% elseif site.author.email %}
+    <a href="mailto:{{ site.author.email }}">
+    {% endif %}
+        <i class="icon ion-email"></i>
+    </a>
+    {% if header.author.facebook %}
+    <a href="{{ header.author.facebook }}">
+        <i class="icon ion-social-facebook"></i>
+    </a>
+    {% elseif site.author.facebook %}
+    <a href="{{ site.author.facebook }}">
+        <i class="icon ion-social-facebook"></i>
+    </a>
+    {% endif %}
+    {% if header.author.twitter %}
+    <a href="{{ header.author.twitter }}">
+        <i class="icon ion-social-twitter"></i>
+    </a>
+    {% elseif site.author.twitter %}
+    <a href="{{ site.author.twitter }}">
+        <i class="icon ion-social-twitter"></i>
+    </a>
+    {% endif %}
+    {% if header.author.github %}
+    <a href="{{ header.author.github }}">
+        <i class="icon ion-social-github"></i>
+    </a>
+    {% elseif site.author.github %}
+    <a href="{{ site.author.github }}">
+        <i class="icon ion-social-github"></i>
+    </a>
+    {% endif %}
+</p>
+{% endif %}

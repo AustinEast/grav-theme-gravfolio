@@ -1,0 +1,9 @@
+<article class="copy">
+            <h2><a href="{{ page.link }}">{{ page.title}}</a></h2>
+            <h4>{{ page.date|date("F") }} {{ page.date|date("d") }}, {{ page.date|date("Y") }}</h4>
+            <h5>{% for tag in page.taxonomy.tag %}
+            <a class="tag" href="{{ blog.url|rtrim('/') }}/tag{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a>
+            {% endfor %}</h5>
+    <a href="{{ page.link }}"><img src="{{ page.media[page.header.featured].url() }}"></a>
+            {{ page.summary }} <a href="{{ page.link }}">Continue Reading...</a>
+</article>

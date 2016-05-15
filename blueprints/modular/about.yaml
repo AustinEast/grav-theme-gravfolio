@@ -1,0 +1,21 @@
+title: About
+'@extends': default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+            fields:
+                content:
+                    type: ignore
+                header.bio:
+                  type: text
+                  label: Bio
+                header.skills:
+                  type: text
+                  label: Skills
+                header.resume:
+                  type: text
+                  label: Resume Link
+                    

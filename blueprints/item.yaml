@@ -1,0 +1,43 @@
+title: Portfolio
+'@extends': default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+            fields:
+                header.description:
+                  type: text
+                  label: Description
+                header.featured:
+                  type: pagemediaselect
+                  label: Thumbnail
+                header.url:
+                  type: text
+                  label: Url (Optional)
+                header.linkText:
+                  type: text
+                  label: Url Text (Optional)
+                header.sliderToggle:
+                  type: toggle
+                  label: Slider 
+                  highlight: 1
+                  default: 0
+                  options:
+                    1: Enabled
+                    0: Disabled
+                  validate:
+                    type: bool
+                header.slider:
+                  type: list
+                  name: slider
+                  label: Slider Images
+                  fields:
+                    order:
+                      by: default
+                      dir: asc
+                    .slide:
+                      type: pagemediaselect
+                      label: Image
+                  

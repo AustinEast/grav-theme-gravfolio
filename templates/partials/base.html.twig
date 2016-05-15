@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% block head %}
+    <link rel="shortcut icon" href="{{ theme_url }}/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{{ theme_url }}/favicon.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% if header.description %}
+    {#Austin East is a developer and designer located in Orlando, Florida#}
+    <meta name="description" content="{{ header.description }}">
+    {% else %}
+    <meta name="description" content="{{ site.description }}">
+    {% endif %}    
+    <meta name="author" content="{{ site.author.name }}">
+    <title>{% if header.title%}{{ header.title }} {% endif %}</title>
+    {% block stylesheets %}
+        {% do assets.add('theme://css/style.css', 101) %}
+        {# Custom CSS #}
+        {% do assets.add('theme://css/custom.css', 100) %}
+        {# Web Fonts #}
+        {% do assets.addCss('https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext',99) %}
+        {% do assets.addCss('https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700,700italic', 98) %}
+        {# Octicons #}
+        {% do assets.add('http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css', 97) %}
+        {{ assets.css() }}
+    {% endblock %}
+    {% endblock head %}
+</head>
+
+    <body>
+        {# include the navigation #}
+        {% include 'partials/navigation.html.twig' %}
+        
+        {# include page content #}
+        {% block content %}{% endblock %}
+        
+        {# include footer #}
+        {% include 'partials/footer.html.twig' %}
+    </body>
+    {# Include extra css + javascript #}
+    {% block bottom %}{% endblock %}
+</html>

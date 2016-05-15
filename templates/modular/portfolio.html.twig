@@ -1,0 +1,18 @@
+<section id="works" class="secondary-bg">
+        <h2>{{ page.title }}</h2>
+        {{ page.content }}
+        {% if page.header.showFilter %}
+        <ul>
+            <li data-filter="all">All</li>
+            {% for class in page.find('/portfolio').header.classes %}
+            <li data-filter=".{{ class }}">{{ class }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <div class="portfolio">
+            {% for page in page.find('/portfolio').children.order('date', 'desc').slice(0, 6) %}
+            {% include 'partials/portfolio-item.html.twig' %}
+            {% endfor %}
+        </div>
+    <a class="btn" href="portfolio">View Portfolio</a>
+    </section>
