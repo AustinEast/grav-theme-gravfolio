@@ -1,2 +1,19 @@
-title: Nopad
+title: Form
 '@extends': default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+            fields:
+                header.secondaryBg:
+                  type: toggle
+                  label: Secondary BG color
+                  highlight: 1
+                  default: 1
+                  options:
+                    1: Enable
+                    0: Disable
+                  validate:
+                    type: bool

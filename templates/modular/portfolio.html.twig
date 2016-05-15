@@ -1,4 +1,4 @@
-<section id="works" class="secondary-bg">
+<section id="works" {% if page.header.secondaryBg %} class="secondary-bg" {% endif %}>
         <h2>{{ page.title }}</h2>
         {{ page.content }}
         {% if page.header.showFilter %}
@@ -9,10 +9,18 @@
             {% endfor %}
         </ul>
         {% endif %}
+    {% if page.header.showAll %}
+        <div class="portfolio">
+            {% for page in page.find('/portfolio').children.order('date', 'desc') %}
+            {% include 'partials/portfolio-item.html.twig' %}
+            {% endfor %}
+        </div>
+    {% else %}
         <div class="portfolio">
             {% for page in page.find('/portfolio').children.order('date', 'desc').slice(0, 6) %}
             {% include 'partials/portfolio-item.html.twig' %}
             {% endfor %}
         </div>
     <a class="btn" href="portfolio">View Portfolio</a>
+    {% endif %}
     </section>

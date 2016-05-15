@@ -1,6 +1,6 @@
 <header>
         <div>
-            <img src="{{ page.media[header.headshot].url }}">
+            <img src="{{ page.media[header.headshot].cropZoom(150,150).url }}">
             <h1>
                 {% if header.author.name %}
                 {{ header.author.name }}

@@ -17,3 +17,23 @@ form:
                     0: Disable
                   validate:
                     type: bool
+                header.showAll:
+                  type: toggle
+                  label: Show All
+                  highlight: 1
+                  default: 1
+                  options:
+                    1: Enable
+                    0: Disable
+                  validate:
+                    type: bool
+                header.secondaryBg:
+                  type: toggle
+                  label: Secondary BG color
+                  highlight: 1
+                  default: 1
+                  options:
+                    1: Enable
+                    0: Disable
+                  validate:
+                    type: bool

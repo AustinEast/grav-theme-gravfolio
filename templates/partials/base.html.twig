@@ -32,7 +32,9 @@
 
     <body>
         {# include the navigation #}
-        {% include 'partials/navigation.html.twig' %}
+        {% if site.navBar %}
+            {% include 'partials/navigation.html.twig' %}
+        {% endif %}
         
         {# include page content #}
         {% block content %}{% endblock %}
