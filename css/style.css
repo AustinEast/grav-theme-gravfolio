@@ -126,7 +126,6 @@ dl {
 
 table {
   -webkit-font-feature-settings: "kern", "liga", "tnum";
-  -moz-font-feature-settings: "kern", "liga", "tnum";
   -ms-font-feature-settings: "kern", "liga", "tnum";
   font-feature-settings: "kern", "liga", "tnum";
   border-collapse: collapse;
@@ -151,7 +150,6 @@ th {
 
 body {
   -webkit-font-feature-settings: "kern", "liga", "pnum";
-  -moz-font-feature-settings: "kern", "liga", "pnum";
   -ms-font-feature-settings: "kern", "liga", "pnum";
   font-feature-settings: "kern", "liga", "pnum";
   -webkit-font-smoothing: antialiased;
@@ -272,6 +270,8 @@ nav {
 @media only screen and (max-width: 767px) {
     nav ul#links {
         width: 100%;
+        -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
         justify-content: space-around; }
     nav p {
         display: none; }}
@@ -314,10 +314,13 @@ header {
       -webkit-align-self: center;
       -ms-flex-item-align: center;
       align-self: center;
-      border-radius: 50%;
       padding-bottom: 10px; }
     header div span {
       padding: 5px; }
+    header div .btn {
+      -webkit-align-self: center;
+      -ms-flex-item-align: center;
+      align-self: center; }
 
 section#about {
   height: auto;
@@ -469,7 +472,7 @@ div#error {
   padding-top: 50px;
   display: block;
   margin: 0 auto;
-  max-width: 890px; }
+  max-width: 700px; }
 
 .tag {
     padding: 5px;
@@ -636,16 +639,12 @@ footer {
 .large-btns_tabs a {
   text-indent: -9999px;
   overflow: hidden;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
   border-radius: 15px;
   background: #ccc;
   background: rgba(0,0,0, .2);
   display: inline-block;
   _display: block;
   *display: block;
-  -webkit-box-shadow: inset 0 0 2px 0 rgba(0,0,0,.3);
-  -moz-box-shadow: inset 0 0 2px 0 rgba(0,0,0,.3);
   box-shadow: inset 0 0 2px 0 rgba(0,0,0,.3);
   width: 9px;
   height: 9px;
