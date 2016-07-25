@@ -16,6 +16,7 @@ form:
                   type: text
                   label: Skills
                 header.resume:
-                  type: text
-                  label: Resume Link
+                  type: pagemediaselect
+                  label: Resume
+                
                     
