@@ -1,4 +1,4 @@
-title: About
+title: Hero
 '@extends': default
 
 form:
@@ -10,9 +10,3 @@ form:
                 header.headshot:
                   type: pagemediaselect
                   label: Headshot Image
-author:
-    name:
-    email:
-    facebook: 
-    twitter:
-    github: 

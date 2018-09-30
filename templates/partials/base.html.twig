@@ -32,7 +32,7 @@
 
     <body>
         {# include the navigation #}
-        {% if site.navBar %}
+        {% if theme_var('nav_toggle') %}
             {% include 'partials/navigation.html.twig' %}
         {% endif %}
         

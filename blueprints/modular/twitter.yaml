@@ -1,0 +1,25 @@
+title: Twitter
+'@extends': default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+            fields:
+              content:
+                type: ignore
+              tweet_link:
+                type: text
+                size: medium
+                label: Published Tweets link
+                help: Displays a list of tweets from https://publish.twitter.com/
+              tweet_amout:
+                type: text
+                size: x-small
+                label: Tweet Amount (Max 50)
+                default: 20
+                validate:
+                  type: int
+                  min: 0
+                  max: 50

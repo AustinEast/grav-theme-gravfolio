@@ -2,11 +2,7 @@
         <div>
             <img src="{{ page.media[header.headshot].cropZoom(150,150).url }}">
             <h1>
-                {% if header.author.name %}
-                {{ header.author.name }}
-                {% else %}
                 {{ site.author.name }}
-                {% endif %}
             </h1>
                 {% if page.content %}
                 {{ page.content }}
