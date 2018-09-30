@@ -7,6 +7,11 @@ author:
   email: eastin93@gmail.com
   url: http://austineast.me
 homepage: https://github.com/AustinEast/grav-theme-gravfolio
+demo: https://github.com/AustinEast/grav-theme-gravfolio
+keywords: gravfolio, theme
+bugs: https://github.com/AustinEast/grav-theme-gravfolio/issues
+license: MIT
+
 
 form:
   validation: loose
