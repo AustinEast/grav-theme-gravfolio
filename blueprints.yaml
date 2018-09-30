@@ -15,10 +15,9 @@ license: MIT
 
 form:
   validation: loose
-
   fields:
     nav_toggle:
-    type: toggle
+      type: toggle
       label: Show Navigation Bar
       help: When enabled, Gravfolio will display the Navigation Bar
       highlight: 1
