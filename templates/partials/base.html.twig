@@ -16,17 +16,17 @@
     {% endif %}    
     <meta name="author" content="{{ site.author.name }}">
     <title>{% if header.title%}{{ header.title }} {% endif %}</title>
+    {% do assets.add('theme://css/style.css', 101) %}
+    {# Custom CSS #}
+    {% do assets.add('theme://css/custom.css', 100) %}
+    {# Web Fonts #}
+    {% do assets.addCss('https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext',99) %}
+    {% do assets.addCss('https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700,700italic', 98) %}
+    {# Octicons #}
+    {% do assets.add('http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css', 97) %}
     {% block stylesheets %}
-        {% do assets.add('theme://css/style.css', 101) %}
-        {# Custom CSS #}
-        {% do assets.add('theme://css/custom.css', 100) %}
-        {# Web Fonts #}
-        {% do assets.addCss('https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext',99) %}
-        {% do assets.addCss('https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700,700italic', 98) %}
-        {# Octicons #}
-        {% do assets.add('http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css', 97) %}
-        {{ assets.css() }}
     {% endblock %}
+    {{ assets.css() }}
     {% endblock head %}
 </head>
 
@@ -43,5 +43,9 @@
         {% include 'partials/footer.html.twig' %}
     </body>
     {# Include extra css + javascript #}
-    {% block bottom %}{% endblock %}
+    {% do assets.add('theme://js/shownav.js', 99) %}
+    {% block bottom %}
+    {% endblock %}
+    {{ assets.js()}}
+
 </html>

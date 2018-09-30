@@ -1,7 +1,7 @@
 <section id="works" {% if page.header.secondaryBg %} class="secondary-bg" {% endif %}>
-        <h2>{{ page.title }}</h2>
-        {{ page.content }}
-        {% if page.header.showFilter %}
+    <h2>{{ page.title }}</h2>
+    {{ page.content }}
+    {% if page.header.showFilter %}
         <ul>
             <li data-filter="all">All</li>
             {% for class in page.find('/portfolio').header.classes %}
@@ -23,4 +23,7 @@
         </div>
     <a class="btn" href="portfolio">View Portfolio</a>
     {% endif %}
-    </section>
+</section>
+
+{% do assets.add('https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.0/mixitup.min.js', 100) %}
+{% do assets.add('theme://js/mixitup.js', 99) %}

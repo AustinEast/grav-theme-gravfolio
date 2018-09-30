@@ -7,12 +7,12 @@ form:
       fields:
         content:
             fields:
-              tweet_link:
+              header.tweet_link:
                 type: text
                 size: medium
                 label: Published Tweets link
                 help: Displays a list of tweets from https://publish.twitter.com/
-              tweet_amout:
+              header.tweet_amount:
                 type: text
                 size: x-small
                 label: Tweet Amount (Max 50)

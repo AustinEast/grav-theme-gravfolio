@@ -1,6 +1,6 @@
 name: Gravfolio
-version: 1.1.1
-description: "Gravfolio is a simple portfolio and blog site, featuring Kunka Lab's awesome MixItUp plugin."
+version: 1.2.0
+description: "Gravfolio is a simple portfolio and blog Theme for GRAV, featuring Kunka Lab's awesome MixItUp plugin."
 icon: id-card-o
 author:
   name: Austin East
@@ -11,7 +11,6 @@ demo: https://github.com/AustinEast/grav-theme-gravfolio
 keywords: gravfolio, theme
 bugs: https://github.com/AustinEast/grav-theme-gravfolio/issues
 license: MIT
-
 
 form:
   validation: loose

@@ -1,18 +1,32 @@
 {% extends 'partials/base.html.twig' %}
 
+{% block stylesheets %}
+{% do assets.add('https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/css/swiper.min.css', 101) %}
+{% endblock %}
+
 {% block content %}
-    <article class="copy">
+    <article class="copy fadeIn">
+        {% if config.plugins.breadcrumbs.enabled %}
+            {% include 'partials/breadcrumbs.html.twig' %}
+        {% endif %}
         <h1>{{ page.title }}</h1>
         <h3>{% for tag in page.taxonomy.tag %}
             <a class="tag" href="{{ blog.url|rtrim('/') }}/tag{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a>
             {% endfor %}</h3>
         <h3>{{ page.date|date("F") }} {{ page.date|date("d") }}, {{ page.date|date("Y") }}</h3>
         {% if page.header.sliderToggle %}
-        <ul class="rslides">
-            {% for slide in page.header.slider %}
-            <li><img src="{{ page.media[slide.slide].url() }}" alt=""></li>
-            {% endfor %}
-        </ul>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                {% for slide in page.header.slider %}
+                <div class="swiper-slide">
+                    <img src="{{ page.media[slide.slide].url() }}" alt="">
+                </div>
+                {% endfor %}
+            </div>
+            <div class="swiper-pagination swiper-pagination-white"></div>
+            <div class="swiper-button-prev swiper-button-white"></div>
+            <div class="swiper-button-next swiper-button-white"></div>
+        </div>
         {% else %}
         <img src="{{ page.media[page.header.featured].url() }}">
         {% endif %}
@@ -24,25 +38,23 @@
         {% endif %}
     </article>
     {% if page.header.url %}
-    <div style="text-align: center;">
+    <div style="text-align: center; padding-bottom: 25px;">
         <a href="{{ page.header.url }}" class="btn" target="_blank">{% if page.header.linkText %}{{ page.header.linkText }}{% else %}View More{% endif %}
         </a>
     </div>
     {% endif %}
+
+    <div style="text-align: center;">
+    {% if not page.isFirst %}
+        <a class="btn prev-next" href="{{ page.nextSibling.url }}"><< Next</a>
+    {% endif %}
+    {% if not page.isLast %}
+            <a class="btn prev-next" href="{{ page.prevSibling.url }}">Prev >></a>
+    {% endif %}
+    </div>
 {% endblock %}
 
 {% block bottom %}
-    {% do assets.add('http://code.jquery.com/jquery-1.11.0.min.js', 101) %}
-    {% do assets.add('theme://js/responsiveslides.min.js', 100) %} 
-    {% do assets.add('theme://js/showup.js', 99) %}
-    {{ assets.js()}}
-<script>
-  $(function() {
-    $(".rslides").responsiveSlides({
-        pager: true,
-        pause: true,
-        namespace: "centered-btns"
-    });
-  });
-</script>
+    {% do assets.add('https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/js/swiper.min.js', 100) %} 
+    {% do assets.add('theme://js/swiper.js', 99) %}
 {% endblock %}

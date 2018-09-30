@@ -1,21 +1,21 @@
 <p>
     {% if theme_var('email_toggle') %}
-    <a href="mailto:{{ theme_var('email_link') }}">
+    <a href="mailto:{{ theme_var('email_link') }}" target="_blank">
         <i class="icon ion-email"></i>
     </a>
     {% endif %}
     {% if theme_var('facebook_toggle') %}
-    <a href="{{ theme_var('facebook_link') }}">
+    <a href="{{ theme_var('facebook_link') }}" target="_blank">
         <i class="icon ion-social-facebook"></i>
     </a>
     {% endif %}
     {% if theme_var('twitter_toggle') %}
-    <a href="{{ theme_var('twitter_link') }}">
+    <a href="{{ theme_var('twitter_link') }}" target="_blank">
         <i class="icon ion-social-twitter"></i>
     </a>
     {% endif %}
     {% if theme_var('github_toggle') %}
-    <a href="{{ theme_var('github_link') }}">
+    <a href="{{ theme_var('github_link') }}" target="_blank">
         <i class="icon ion-social-github"></i>
     </a>
     {% endif %}
