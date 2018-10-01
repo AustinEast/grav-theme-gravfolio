@@ -547,4 +547,8 @@ footer {
     transform: translateY(0);
   }
 }
-
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
