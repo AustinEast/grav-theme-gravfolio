@@ -547,6 +547,9 @@ footer {
     transform: translateY(0);
   }
 }
+.swiper-container {
+  background-color: #454857;
+}
 .swiper-slide {
   display: flex;
   justify-content: center;
