@@ -19,7 +19,8 @@
             <div class="swiper-wrapper">
                 {% for slide in page.header.slider %}
                 <div class="swiper-slide">
-                    <img src="{{ page.media[slide.slide].url() }}" alt="">
+                    <img data-src="{{ page.media[slide.slide].url() }}" alt="" class="swiper-lazy">
+                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                 </div>
                 {% endfor %}
             </div>
