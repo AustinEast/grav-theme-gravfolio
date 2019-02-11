@@ -14,3 +14,7 @@ var mySwiper = new Swiper('.swiper-container', {
 		prevEl: '.swiper-button-prev',
 	}
 });
+
+mySwiper.on('lazyImageReady' ,() => {
+	setTimeout(() => mySwiper.updateAutoHeight(), 500);
+});

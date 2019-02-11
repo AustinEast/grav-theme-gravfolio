@@ -19,7 +19,7 @@
             <div class="swiper-wrapper">
                 {% for slide in page.header.slider %}
                 <div class="swiper-slide">
-                    <img data-src="{{ page.media[slide.slide].url() }}" alt="" class="swiper-lazy">
+                    <img src="{{ page.media[slide.slide].display('thumbnail').quality(25).gaussianBlur(3).url() }}" data-src="{{ page.media[slide.slide].url() }}" alt="" class="swiper-lazy">
                     <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                 </div>
                 {% endfor %}
@@ -56,6 +56,6 @@
 {% endblock %}
 
 {% block bottom %}
-    {% do assets.add('https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/js/swiper.min.js', 100) %} 
+    {% do assets.add('https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/js/swiper.min.js', 100) %} 
     {% do assets.add('theme://js/swiper.js', 99) %}
 {% endblock %}
