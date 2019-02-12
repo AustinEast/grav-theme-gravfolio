@@ -10,6 +10,9 @@
                  </li>
             {% endif %}
         {% endfor %}
+        <li class="{{ current_page }}">
+            <a href="{{ base_url_absolute }}{{ url('theme://assets/') }}/{{ theme.resume|first.name }}" target="_blank">Resume</a>
+        </li>
     </ul>
     {% include 'partials/social.html.twig' %}
 </nav>

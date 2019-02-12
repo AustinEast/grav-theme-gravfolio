@@ -6,6 +6,7 @@
         <a style="margin: 10px;" class="{{ current_page }}" href="{{ page.url }}">{{ page.menu }}</a>
         {% endif %}
         {% endfor %}
+        <a style="margin: 10px;" href="{{ base_url_absolute }}{{ url('theme://assets/') }}/{{ theme.resume|first.name }}" target="_blank">Resume</a>
     </div>
     {% include 'partials/social.html.twig' %}
 

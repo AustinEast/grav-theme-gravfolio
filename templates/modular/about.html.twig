@@ -16,9 +16,7 @@
             </div>
         </div>
         <div class="container">
-            <a href="{{ base_url }}/portfolio" class="btn">Portfolio</a>
-            {% if page.header.resume %}
-            <a href="{{ page.media[page.header.resume].url }}" class="btn" target="_blank">Resume</a>
-            {% endif %}
+            <a href="{{ base_url_absolute }}{{ theme_var('portfolio') }}" class="btn">Portfolio</a>
+            <a href="{{ base_url_absolute }}{{ url('theme://assets/') }}/{{ theme.resume|first.name }}" class="btn" target="_blank">Resume</a>
         </div>
     </section>
