@@ -11,7 +11,7 @@
         {% endif %}
         <h1>{{ page.title }}</h1>
         <h3>{% for tag in page.taxonomy.tag %}
-            <a class="tag" href="{{ blog.url|rtrim('/') }}/tag{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a>
+            <a class="tag" href="{{ page.parent.url|rtrim('/') }}/tag{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a>
             {% endfor %}</h3>
         <h3>{{ page.date|date("F") }} {{ page.date|date("d") }}, {{ page.date|date("Y") }}</h3>
         {% if page.header.sliderToggle %}

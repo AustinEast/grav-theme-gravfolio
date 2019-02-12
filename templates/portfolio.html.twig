@@ -28,7 +28,7 @@
         <h2>{{ page.title }}</h2>
         {{ page.content }}
     {% endif %}
-        {% if page.header.showFilter %}
+        {% if page.header.showFilter and uri.params|length == 0 %}
         <ul>
             <li data-filter="all">All</li>
             {% for class in page.header.classes %}
