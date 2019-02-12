@@ -1,5 +1,13 @@
 <footer>
-        {% include 'partials/social.html.twig' %}
+    <div style="margin-top: 20px;"> 
+        {% for page in pages.children.visible %}
+        {% if page.visible %}
+        {% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
+        <a style="margin: 10px;" class="{{ current_page }}" href="{{ page.url }}">{{ page.menu }}</a>
+        {% endif %}
+        {% endfor %}
+    </div>
+    {% include 'partials/social.html.twig' %}
 
-        <p>Copyrighted &copy; {{ site.copyright.name }} {{ site.copyright.year }}</p>
-    </footer>
+    <p>Copyrighted &copy; {{ site.copyright.name }} {{ site.copyright.year }}</p>
+</footer>

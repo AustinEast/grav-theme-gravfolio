@@ -15,7 +15,10 @@
                 {% endif %}
             </div>
         </div>
-        {% if page.header.resume %}
-        <a href="{{ page.media[page.header.resume].url }}" class="btn" target="_blank">View My Resume</a>
-        {% endif %}
+        <div class="container">
+            <a href="{{ base_url }}/portfolio" class="btn">Portfolio</a>
+            {% if page.header.resume %}
+            <a href="{{ page.media[page.header.resume].url }}" class="btn" target="_blank">Resume</a>
+            {% endif %}
+        </div>
     </section>
