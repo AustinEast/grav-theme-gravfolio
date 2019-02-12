@@ -37,22 +37,25 @@
         {% elseif page.header.description %}
         {{ page.header.description }}
         {% endif %}
-    </article>
-    {% if page.header.url %}
-    <div style="text-align: center; padding-bottom: 25px;">
-        <a href="{{ page.header.url }}" class="btn" target="_blank">{% if page.header.linkText %}{{ page.header.linkText }}{% else %}View More{% endif %}
-        </a>
-    </div>
-    {% endif %}
+        {% if page.header.url %}
+        <div style="text-align: center; padding-bottom: 25px;">
+            <a href="{{ page.header.url }}" class="btn" target="_blank">{% if page.header.linkText %}{{ page.header.linkText }}{% else %}View More{% endif %}</a>
+        </div>
+        {% endif %}
 
-    <div style="text-align: center;">
-    {% if not page.isFirst %}
-        <a class="btn prev-next" href="{{ page.nextSibling.url }}"><< Next</a>
-    {% endif %}
-    {% if not page.isLast %}
-            <a class="btn prev-next" href="{{ page.prevSibling.url }}">Prev >></a>
-    {% endif %}
-    </div>
+        <div style="display: flex; justify-content: space-between;">
+        {% if not page.isFirst %}
+            <a class="prev-next" href="{{ page.nextSibling.url }}"><< Prev - {{ page.nextSibling.title }}</a>
+        {% else %}
+            <span></span>
+        {% endif %}
+        {% if not page.isLast %}
+                <a class="prev-next" href="{{ page.prevSibling.url }}">{{ page.prevSibling.title }} - Next >></a>
+                {% else %}
+            <span></span>
+        {% endif %}
+        </div>
+    </article>
 {% endblock %}
 
 {% block bottom %}
