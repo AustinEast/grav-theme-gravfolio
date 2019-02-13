@@ -1,6 +1,6 @@
 <section id="twitter">
         <h2>{{ page.title }}</h2>
         {{ page.content }}
-        <a class="twitter-grid"  data-limit="{{ page.header.tweet_amount }}" data-width="700" data-partner="tweetdeck" href="{{ page.header.tweet_link }}">Loading feed from Twitter...</a> 
+        <a class="twitter-timeline" data-width="{{ page.header.width }}" data-height="{{ page.header.height }}" data-chrome="noheader nofooter transparent" data-partner="tweetdeck" href="{{ page.header.tweet_link }}">Loading feed from Twitter...</a> 
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </section>

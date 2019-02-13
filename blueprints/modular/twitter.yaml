@@ -12,12 +12,17 @@ form:
                 size: medium
                 label: Published Tweets link
                 help: Displays a list of tweets from https://publish.twitter.com/
-              header.tweet_amount:
+              header.width:
                 type: text
                 size: x-small
-                label: Tweet Amount (Max 50)
-                default: 20
+                label: Container Width
+                default: 400
                 validate:
                   type: int
-                  min: 0
-                  max: 50
+              header.height: 
+                type: text
+                size: x-small
+                label: Container Height
+                default: 400
+                validate:
+                  type: int
